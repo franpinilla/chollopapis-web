@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CholloPapis — Ofertas Reales para Familias</title>
+  <meta name="description" content="Los mejores chollos de Amazon para bebés, hijos y hogar. Productos de calidad con descuentos verificados. Actualizamos 3 veces al día." />
+  <meta name="keywords" content="chollos amazon, ofertas bebé, descuentos hogar, ofertas familias, chollos hijos, amazon españa ofertas" />
+  <meta property="og:title" content="CholloPapis — Ofertas Reales para Familias" />
+  <meta property="og:description" content="Los mejores chollos de Amazon para bebés, hijos y hogar." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5239131706190280" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #FAF3E8;
+      --cream2:   #F2E8D5;
+      --sage:     #7BAE8F;
+      --sage-d:   #5C9070;
+      --sage-l:   #C8DDD1;
+      --navy:     #1E3A4A;
+      --coral:    #E8836A;
+      --coral-l:  #F4B5A5;
+      --gold:     #F5C842;
+      --gold-d:   #D4A827;
+      --text:     #2C3E35;
+      --muted:    #7A8C84;
+      --white:    #FFFFFF;
+      --radius:   16px;
+      --radius-sm:10px;
+      --shadow:   0 4px 20px rgba(30,58,74,.10);
+      --shadow-lg:0 8px 40px rgba(30,58,74,.15);
+      --sidebar:  290px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--text); font-family: 'Nunito Sans', sans-serif; font-size: 15px; line-height: 1.6; min-height: 100vh; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,243,232,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--sage-l);
+      padding: 0 24px;
+      box-shadow: 0 2px 12px rgba(30,58,74,.07);
+    }
+    .header-inner {
+      max-width: 1380px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px; gap: 16px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-text {
+      font-family: 'Nunito', sans-serif; font-size: 1.55rem; font-weight: 900;
+      line-height: 1;
+    }
+    .logo-text .c1 { color: var(--navy); }
+    .logo-text .c2 { color: var(--sage-d); }
+    .logo-tagline { font-size: .7rem; font-weight: 600; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; margin-top: 1px; }
+
+    .header-nav { display: flex; align-items: center; gap: 10px; }
+
+    .tg-btn-header {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--navy); color: var(--white);
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .85rem;
+      padding: 9px 18px; border-radius: 999px;
+      text-decoration: none; white-space: nowrap;
+      transition: background .2s, transform .15s;
+      box-shadow: 0 3px 12px rgba(30,58,74,.25);
+    }
+    .tg-btn-header:hover { background: var(--sage-d); transform: translateY(-1px); }
+    .tg-btn-header svg { width: 17px; height: 17px; fill: white; flex-shrink: 0; }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 1380px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; gap: 28px; align-items: flex-start;
+    }
+    .main-col { flex: 1; min-width: 0; }
+    .sidebar { width: var(--sidebar); flex-shrink: 0; position: sticky; top: 82px; display: flex; flex-direction: column; gap: 16px; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 48px 0 36px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--sage-l); color: var(--sage-d);
+      font-family: 'Nunito', sans-serif; font-size: .78rem; font-weight: 800;
+      padding: 5px 14px; border-radius: 999px;
+      letter-spacing: .04em; text-transform: uppercase;
+      width: fit-content;
+    }
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 900;
+      color: var(--navy); line-height: 1.15;
+    }
+    .hero h1 em {
+      font-style: normal; color: var(--sage-d);
+      position: relative;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute; bottom: 2px; left: 0; right: 0;
+      height: 4px; background: var(--coral-l);
+      border-radius: 2px; z-index: -1;
+    }
+    .hero p { color: var(--muted); max-width: 540px; font-size: 1rem; }
+
+    .stats-row { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
+    .stat-chip {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--white); border: 2px solid var(--sage-l);
+      border-radius: var(--radius-sm); padding: 8px 14px;
+      box-shadow: var(--shadow);
+    }
+    .stat-chip .icon { font-size: 1.3rem; }
+    .stat-chip strong { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; color: var(--navy); }
+    .stat-chip span { font-size: .75rem; color: var(--muted); }
+
+    /* ── Banner Telegram inline ── */
+    .tg-inline-banner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d5470 100%);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      box-shadow: var(--shadow-lg);
+      margin: 4px 0 24px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .tg-inline-banner:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(30,58,74,.22); }
+    .tg-inline-left { display: flex; align-items: center; gap: 16px; }
+    .tg-inline-icon {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .tg-inline-icon svg { width: 26px; height: 26px; fill: white; }
+    .tg-inline-text { color: white; }
+    .tg-inline-text strong { font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 800; display: block; }
+    .tg-inline-text span { font-size: .83rem; opacity: .8; }
+    .tg-inline-cta {
+      background: var(--sage); color: white;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .88rem;
+      padding: 10px 22px; border-radius: 999px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* ── AdSense horizontal ── */
+    .ad-horizontal { margin: 8px 0 20px; min-height: 90px; }
+    .ad-horizontal ins { display: block; }
+
+    /* ── Filtros ── */
+    .filters-section { margin-bottom: 20px; }
+    .filters-label {
+      font-family: 'Nunito', sans-serif; font-size: .75rem; font-weight: 800;
+      color: var(--muted); text-transform: uppercase; letter-spacing: .07em;
+      margin-bottom: 10px;
+    }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--white); border: 2px solid var(--sage-l);
+      color: var(--text); font-size: .82rem; font-family: 'Nunito', sans-serif;
+      font-weight: 700; padding: 6px 14px; border-radius: 999px;
+      cursor: pointer; transition: all .18s;
+      box-shadow: 0 2px 6px rgba(30,58,74,.06);
+    }
+    .filter-btn:hover { border-color: var(--sage); color: var(--sage-d); }
+    .filter-btn.active { background: var(--sage-d); border-color: var(--sage-d); color: white; box-shadow: 0 3px 12px rgba(92,144,112,.35); }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 18px; padding-bottom: 48px;
+    }
+
+    /* ── Tarjeta ── */
+    .card {
+      background: var(--white); border: 2px solid var(--sage-l);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--sage); }
+    .card.premium { border-color: var(--gold-d); box-shadow: 0 4px 20px rgba(212,168,39,.2); }
+    .card.premium:hover { box-shadow: 0 8px 40px rgba(212,168,39,.3); }
+    .card.premium::before {
+      content: '🏆 Chollo Premium';
+      position: absolute; top: 10px; left: 10px;
+      background: linear-gradient(90deg, var(--gold-d), var(--gold));
+      color: var(--navy); font-family: 'Nunito', sans-serif;
+      font-size: .68rem; font-weight: 800;
+      padding: 3px 10px; border-radius: 999px;
+      letter-spacing: .03em; z-index: 2;
+    }
+
+    .card-img-wrap { background: var(--cream); padding: 20px; }
+    .card-img { width: 100%; aspect-ratio: 1/1; object-fit: contain; display: block; }
+    .card-img-placeholder { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+
+    .card-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+    .cat-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .72rem; font-weight: 700;
+      color: var(--sage-d); background: var(--sage-l);
+      padding: 2px 9px; border-radius: 999px; width: fit-content;
+    }
+
+    .card-title {
+      font-family: 'Nunito', sans-serif; font-size: .88rem; font-weight: 700;
+      color: var(--navy); line-height: 1.35;
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    .price-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+    .price-now { font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--sage-d); }
+    .price-was { font-size: .82rem; color: var(--muted); text-decoration: line-through; }
+    .discount-badge {
+      background: var(--coral); color: white;
+      font-family: 'Nunito', sans-serif; font-size: .73rem; font-weight: 800;
+      padding: 2px 8px; border-radius: 999px;
+    }
+
+    .stars-row { display: flex; align-items: center; gap: 5px; font-size: .82rem; }
+    .stars { color: var(--gold-d); }
+    .rating-val { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--navy); }
+    .reviews { color: var(--muted); }
+
+    .card-footer { padding: 0 14px 14px; }
+    .buy-btn {
+      display: block; width: 100%;
+      background: var(--navy); color: white;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .88rem;
+      text-align: center; padding: 11px;
+      border-radius: var(--radius-sm); text-decoration: none;
+      transition: background .18s, transform .15s;
+      box-shadow: 0 3px 10px rgba(30,58,74,.2);
+    }
+    .buy-btn:hover { background: var(--sage-d); transform: scale(.99); }
+
+    /* ── Sidebar ── */
+    .sidebar-block {
+      background: var(--white); border: 2px solid var(--sage-l);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .sidebar-title {
+      font-family: 'Nunito', sans-serif; font-size: .72rem; font-weight: 800;
+      color: var(--muted); letter-spacing: .08em; text-transform: uppercase;
+      padding: 10px 14px 8px; border-bottom: 1px solid var(--sage-l);
+      background: var(--cream);
+    }
+
+    /* Banners Amazon servicios */
+    .amz-promo {
+      display: flex; flex-direction: column; gap: 5px;
+      padding: 14px 16px; text-decoration: none; color: var(--text);
+      transition: background .18s;
+    }
+    .amz-promo:hover { background: var(--cream); }
+    .amz-promo .svc-label {
+      font-size: .68rem; font-weight: 800; letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .amz-promo .svc-title {
+      font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 900;
+      color: var(--navy); line-height: 1.2;
+    }
+    .amz-promo .svc-desc { font-size: .78rem; color: var(--muted); }
+    .amz-promo .svc-cta {
+      margin-top: 5px; display: inline-block;
+      background: var(--sage-d); color: white;
+      font-family: 'Nunito', sans-serif; font-size: .75rem; font-weight: 800;
+      padding: 5px 12px; border-radius: 999px; width: fit-content;
+      transition: background .15s;
+    }
+    .amz-promo:hover .svc-cta { background: var(--navy); }
+
+    .prime-label   { color: #00A8E0; }
+    .music-label   { color: #1DB954; }
+    .audible-label { color: #E87722; }
+    .kindle-label  { color: var(--coral); }
+
+    /* Sidebar AdSense */
+    .sidebar-ad { padding: 10px; }
+    .sidebar-ad ins { display: block; }
+
+    /* Sidebar Telegram banner */
+    .sidebar-tg {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 18px 16px; text-decoration: none;
+      background: linear-gradient(160deg, var(--navy), #2d5470);
+      transition: opacity .2s;
+    }
+    .sidebar-tg:hover { opacity: .93; }
+    .sidebar-tg .tg-top { display: flex; align-items: center; gap: 10px; }
+    .sidebar-tg .tg-top svg { width: 28px; height: 28px; fill: white; flex-shrink: 0; }
+    .sidebar-tg .tg-title { font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 900; color: white; }
+    .sidebar-tg .tg-desc { font-size: .78rem; color: rgba(255,255,255,.75); }
+    .sidebar-tg .tg-cta {
+      display: block; width: 100%;
+      background: var(--sage); color: white;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .82rem;
+      text-align: center; padding: 9px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── Banner Telegram grande (bajo grid) ── */
+    .tg-big-banner {
+      margin: 0 0 48px;
+      background: var(--cream2);
+      border: 2px solid var(--sage-l);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+      box-shadow: var(--shadow);
+    }
+    .tg-big-left { display: flex; align-items: center; gap: 20px; }
+    .tg-big-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .tg-big-icon svg { width: 34px; height: 34px; fill: white; }
+    .tg-big-text h2 { font-family: 'Nunito', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--navy); }
+    .tg-big-text p { font-size: .88rem; color: var(--muted); margin-top: 3px; }
+    .tg-big-cta {
+      background: var(--navy); color: white;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem;
+      padding: 13px 30px; border-radius: 999px; text-decoration: none;
+      white-space: nowrap; flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(30,58,74,.25);
+      transition: background .2s, transform .15s;
+    }
+    .tg-big-cta:hover { background: var(--sage-d); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.6);
+      padding: 36px 24px; text-align: center;
+      font-size: .8rem; line-height: 2;
+    }
+    footer strong { color: white; }
+    footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-logo {
+      font-family: 'Nunito', sans-serif; font-size: 1.3rem; font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .footer-logo .c1 { color: white; }
+    .footer-logo .c2 { color: var(--sage); }
+
+    /* ── Empty state ── */
+    .empty { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--muted); }
+    .empty span { font-size: 3rem; display: block; margin-bottom: 12px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .sidebar { display: none; }
+      .page-wrap { padding: 0 16px; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 28px 0 20px; }
+      .tg-inline-banner { padding: 18px 20px; }
+      .tg-big-banner { padding: 24px 20px; }
+      .tg-big-left { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-wrap">
+      <div>
+        <div class="logo-text"><span class="c1">Chollo</span><span class="c2">Papis</span></div>
+        <div class="logo-tagline">Ofertas reales para familias</div>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="https://t.me/CholloPapis" target="_blank" rel="noopener" class="tg-btn-header">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Únete al canal
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ LAYOUT ═══════════════════════════════════════════════ -->
+<div class="page-wrap">
+
+  <!-- ── COLUMNA PRINCIPAL ──────────────────────────────── -->
+  <div class="main-col">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">⚡ Actualizado 3 veces al día</div>
+      <h1>Ahorra tiempo,<br><em>disfruta tu familia</em></h1>
+      <p>Los mejores chollos de Amazon para bebés, hijos y hogar. Solo productos con valoración ⭐ 4.2+ y descuento mínimo del 20%.</p>
+      <div class="stats-row">
+        <div class="stat-chip"><span class="icon">💸</span><div><strong>20%+</strong><span>Descuento mínimo</span></div></div>
+        <div class="stat-chip"><span class="icon">⭐</span><div><strong>4.2+</strong><span>Valoración mínima</span></div></div>
+        <div class="stat-chip"><span class="icon">🔄</span><div><strong>3×/día</strong><span>Actualizaciones</span></div></div>
+      </div>
+    </section>
+
+    <!-- Banner Telegram inline 1 -->
+    <a href="https://t.me/CholloPapis" target="_blank" rel="noopener" class="tg-inline-banner">
+      <div class="tg-inline-left">
+        <div class="tg-inline-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="tg-inline-text">
+          <strong>📲 Recibe los chollos antes que nadie</strong>
+          <span>Únete al canal de Telegram @CholloPapis — gratis, sin spam</span>
+        </div>
+      </div>
+      <div class="tg-inline-cta">Unirse gratis →</div>
+    </a>
+
+    <!-- AdSense horizontal 1 -->
+    <div class="ad-horizontal">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5239131706190280"
+           data-ad-slot="5566619655"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters-section">
+      <div class="filters-label">Filtrar por categoría</div>
+      <div class="filters">
+        <button class="filter-btn active" onclick="filtrar('todos',this)">🛍️ Todos</button>
+        <button class="filter-btn" onclick="filtrar('Baby',this)">👶 Bebés</button>
+        <button class="filter-btn" onclick="filtrar('Toys',this)">🧸 Juguetes</button>
+        <button class="filter-btn" onclick="filtrar('HomeGarden',this)">🏠 Hogar</button>
+        <button class="filter-btn" onclick="filtrar('Kitchen',this)">🍳 Cocina</button>
+        <button class="filter-btn" onclick="filtrar('LargeAppliances',this)">🫧 Electrodomésticos</button>
+        <button class="filter-btn" onclick="filtrar('Electronics',this)">🔌 Electrónica</button>
+        <button class="filter-btn" onclick="filtrar('VideoGames',this)">🎮 Videoconsolas</button>
+        <button class="filter-btn" onclick="filtrar('premium',this)">🏆 Premium</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid" id="grid"></div>
+
+    <!-- AdSense horizontal 2 -->
+    <div class="ad-horizontal" style="margin-bottom:32px">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5239131706190280"
+           data-ad-slot="8202041764"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Banner Telegram grande (segundo banner) -->
+    <div class="tg-big-banner">
+      <div class="tg-big-left">
+        <div class="tg-big-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="tg-big-text">
+          <h2>🔔 ¿No quieres perder ningún chollo?</h2>
+          <p>En el canal de Telegram publicamos 3 veces al día. Activa las notificaciones y ahorra en cada compra para tu familia.</p>
+        </div>
+      </div>
+      <a href="https://t.me/CholloPapis" target="_blank" rel="noopener" class="tg-big-cta">
+        Unirse a @CholloPapis →
+      </a>
+    </div>
+
+  </div><!-- /main-col -->
+
+  <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Telegram sidebar -->
+    <div class="sidebar-block">
+      <a href="https://t.me/CholloPapis" target="_blank" rel="noopener" class="sidebar-tg">
+        <div class="tg-top">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span class="tg-title">Canal @CholloPapis</span>
+        </div>
+        <span class="tg-desc">Chollos para familias, 3 veces al día. Gratis y sin spam.</span>
+        <span class="tg-cta">Unirse al canal →</span>
+      </a>
+    </div>
+
+    <!-- Amazon Prime -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">⚡ Servicios Amazon</div>
+      <a href="https://www.amazon.es/amazonprime?tag=chollopapis-21" target="_blank" rel="noopener sponsored" class="amz-promo">
+        <span class="svc-label prime-label">Amazon Prime</span>
+        <span class="svc-title">Envíos gratis + Prime Video + Music</span>
+        <span class="svc-desc">30 días de prueba gratuita. Sin compromiso.</span>
+        <span class="svc-cta">Probar gratis →</span>
+      </a>
+    </div>
+
+    <!-- AdSense sidebar 1 -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">Publicidad</div>
+      <div class="sidebar-ad">
+        <ins class="adsbygoogle"
+             style="display:block;width:260px;height:250px"
+             data-ad-client="ca-pub-5239131706190280"
+             data-ad-slot="5566619655"
+             data-ad-format="rectangle"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- Amazon Music -->
+    <div class="sidebar-block">
+      <a href="https://www.amazon.es/music/unlimited?tag=chollopapis-21" target="_blank" rel="noopener sponsored" class="amz-promo">
+        <span class="svc-label music-label">Amazon Music Unlimited</span>
+        <span class="svc-title">100 millones de canciones sin anuncios</span>
+        <span class="svc-desc">4 meses gratis para nuevos suscriptores.</span>
+        <span class="svc-cta">Escuchar gratis →</span>
+      </a>
+    </div>
+
+    <!-- Audible -->
+    <div class="sidebar-block">
+      <a href="https://www.amazon.es/audible?tag=chollopapis-21" target="_blank" rel="noopener sponsored" class="amz-promo">
+        <span class="svc-label audible-label">Audible</span>
+        <span class="svc-title">Audiolibros y podcasts exclusivos</span>
+        <span class="svc-desc">30 días gratis + 1 audiolibro incluido.</span>
+        <span class="svc-cta">Escuchar gratis →</span>
+      </a>
+    </div>
+
+    <!-- AdSense sidebar 2 -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">Publicidad</div>
+      <div class="sidebar-ad">
+        <ins class="adsbygoogle"
+             style="display:block;width:260px;height:250px"
+             data-ad-client="ca-pub-5239131706190280"
+             data-ad-slot="8202041764"
+             data-ad-format="rectangle"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- Kindle Unlimited -->
+    <div class="sidebar-block">
+      <a href="https://www.amazon.es/kindle-dbs/ku/signup?tag=chollopapis-21" target="_blank" rel="noopener sponsored" class="amz-promo">
+        <span class="svc-label kindle-label">Kindle Unlimited</span>
+        <span class="svc-title">+4 millones de libros digitales</span>
+        <span class="svc-desc">2 meses gratis para nuevos usuarios.</span>
+        <span class="svc-cta">Leer gratis →</span>
+      </a>
+    </div>
+
+  </aside>
+
+</div><!-- /page-wrap -->
+
+<!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo"><span class="c1">Chollo</span><span class="c2">Papis</span></div>
+  Ofertas reales para familias · Actualizamos 3 veces al día<br>
+  Como Afiliado de Amazon, obtenemos ingresos por las compras que cumplan los requisitos aplicables.<br>
+  <a href="https://t.me/CholloPapis" target="_blank">Canal Telegram</a> ·
+  <a href="aviso-legal.html">Aviso legal</a> ·
+  <a href="privacidad.html">Privacidad</a>
+</footer>
+
+<script src="ofertas.js"></script>
+<script>
+function filtrar(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if (cat === 'todos') card.style.display = '';
+    else if (cat === 'premium') card.style.display = card.classList.contains('premium') ? '' : 'none';
+    else card.style.display = card.dataset.cat === cat ? '' : 'none';
+  });
+  const visible = [...cards].filter(c => c.style.display !== 'none');
+  const grid = document.getElementById('grid');
+  const empty = grid.querySelector('.empty');
+  if (visible.length === 0 && !empty) {
+    grid.insertAdjacentHTML('beforeend','<div class="empty"><span>🔍</span>No hay ofertas en esta categoría ahora mismo.<br>Vuelve más tarde o únete al canal de Telegram.</div>');
+  } else if (visible.length > 0 && empty) empty.remove();
+}
+</script>
+</body>
+</html>

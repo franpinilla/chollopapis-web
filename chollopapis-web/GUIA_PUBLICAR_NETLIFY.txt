@@ -1,0 +1,157 @@
+═══════════════════════════════════════════════════════════════
+   GUÍA — PUBLICAR LA WEB EN NETLIFY (GRATIS)
+   Y VINCULARLA CON ADSENSE
+═══════════════════════════════════════════════════════════════
+
+ARCHIVOS DE LA WEB
+──────────────────
+  index.html   → Página principal
+  ofertas.js   → Datos de las ofertas (se actualiza con el bot)
+
+═══════════════════════════════════════════════════════════════
+PASO 1 — CREAR CUENTA EN NETLIFY
+═══════════════════════════════════════════════════════════════
+
+1. Ve a https://netlify.com
+2. Haz clic en "Sign up" → "Sign up with Email"
+3. Introduce tu email y una contraseña
+4. Confirma el email que te llegue
+
+═══════════════════════════════════════════════════════════════
+PASO 2 — SUBIR LA WEB (SIN CÓDIGO, ARRASTRANDO)
+═══════════════════════════════════════════════════════════════
+
+1. Una vez dentro de Netlify, verás un panel con el mensaje:
+   "Want to deploy a new site without connecting to Git?"
+2. Debajo hay una zona con el texto:
+   "Drag and drop your site output folder here"
+3. Abre el explorador de archivos de Windows y ve a la
+   carpeta de la web:
+   C:\Users\sara_\OneDrive\Escritorio\FRAN\chollopapis-web
+4. SELECCIONA LA CARPETA ENTERA (no los archivos sueltos)
+   y arrástrala hasta esa zona de Netlify
+5. Netlify subirá los archivos automáticamente (tarda 10-20s)
+6. Te asignará una URL como: https://amazing-name-123.netlify.app
+
+═══════════════════════════════════════════════════════════════
+PASO 3 — CAMBIAR EL NOMBRE DEL SITIO
+═══════════════════════════════════════════════════════════════
+
+1. En el panel de Netlify, haz clic en tu sitio
+2. Ve a: Site configuration → General → Site details
+3. Haz clic en "Change site name"
+4. Escribe: chollopapis  (si está disponible)
+5. Tu URL quedará: https://chollopapis.netlify.app
+
+═══════════════════════════════════════════════════════════════
+PASO 4 — VINCULAR CON TU CUENTA DE ADSENSE
+═══════════════════════════════════════════════════════════════
+
+4.1 Añadir el sitio a AdSense
+──────────────────────────────
+1. Ve a https://adsense.google.com
+2. En el menú lateral: Sitios → Añadir sitio
+3. Introduce la URL: https://chollopapis.netlify.app
+4. Haz clic en "Guardar y continuar"
+5. AdSense te dará un código de verificación, algo como:
+   <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXX">
+
+4.2 Pegar el código en index.html
+───────────────────────────────────
+1. Abre index.html con el Bloc de notas o Visual Studio Code
+2. Busca esta línea (está cerca del inicio, en el <head>):
+   <!-- ► ADSENSE: sustituye ca-pub-XXXXXXXXXX por tu Publisher ID real -->
+3. DEBAJO de esa línea, pega el código que te dio AdSense:
+   <meta name="google-adsense-account" content="ca-pub-TUCODIGO">
+4. También descomenta (quita los <!-- y -->) la línea del script:
+   <script async src="https://pagead2.googlesyndication.com/..."></script>
+   sustituyendo XXXXXXXXXX por tu Publisher ID real
+
+4.3 Añadir los bloques de anuncio
+───────────────────────────────────
+1. En AdSense: Anuncios → Por unidad de anuncio → Anuncios display
+2. Crea un anuncio, copia el código <ins class="adsbygoogle"...>
+3. En index.html busca los dos comentarios:
+   <!-- ► Bloque AdSense 1 -->
+   <!-- ► Bloque AdSense 2 -->
+4. Sustituye la línea <div class="ad-placeholder">...</div>
+   por el código de AdSense en cada bloque
+
+4.4 Volver a subir la web actualizada
+───────────────────────────────────────
+1. En Netlify, ve a tu sitio → Deploys
+2. Arrastra de nuevo la carpeta actualizada a la zona de deploy
+3. En 10-20 segundos la web estará actualizada
+
+═══════════════════════════════════════════════════════════════
+PASO 5 — CONECTAR EL BOT CON LA WEB
+═══════════════════════════════════════════════════════════════
+
+Para que el bot actualice automáticamente las ofertas de la web:
+
+1. Abre el archivo app\.env del bot
+2. Rellena WEB_OFERTAS_PATH con la ruta completa a ofertas.js:
+   WEB_OFERTAS_PATH=C:\Users\sara_\OneDrive\Escritorio\FRAN\chollopapis-web\ofertas.js
+
+3. Cada vez que el bot publique un tramo, actualizará ofertas.js
+
+4. El problema: Netlify no detecta cambios automáticamente.
+   Tienes dos opciones:
+   A) Subir manualmente la carpeta a Netlify tras cada tramo
+      (poco práctico)
+   B) Conectar Netlify con GitHub para que se actualice solo
+      (ver PASO 6)
+
+═══════════════════════════════════════════════════════════════
+PASO 6 — ACTUALIZACIÓN AUTOMÁTICA CON GITHUB (RECOMENDADO)
+═══════════════════════════════════════════════════════════════
+
+Esto hace que cada vez que el bot modifica ofertas.js,
+la web se republique sola en Netlify sin que hagas nada.
+
+6.1 Crear cuenta en GitHub
+────────────────────────────
+1. Ve a https://github.com y crea una cuenta gratuita
+
+6.2 Crear repositorio
+───────────────────────
+1. Haz clic en el "+" → "New repository"
+2. Nombre: chollopapis-web
+3. Visibilidad: Public (necesario para Netlify gratis)
+4. Haz clic en "Create repository"
+
+6.3 Subir los archivos al repositorio
+───────────────────────────────────────
+1. En la página del repositorio, haz clic en
+   "uploading an existing file"
+2. Arrastra index.html y ofertas.js
+3. Haz clic en "Commit changes"
+
+6.4 Conectar Netlify con GitHub
+─────────────────────────────────
+1. En Netlify: Add new site → Import an existing project
+2. Selecciona GitHub → Autoriza Netlify
+3. Selecciona el repositorio "chollopapis-web"
+4. Configuración de build: déjalo todo vacío (web estática)
+5. Haz clic en "Deploy site"
+
+6.5 Automatizar la subida desde el bot
+──────────────────────────────────────
+Cuando el bot actualiza ofertas.js, necesitas que ese
+cambio suba automáticamente a GitHub.
+Instala Git en Windows: https://git-scm.com/download/win
+Luego dime y te genero el script automático.
+
+═══════════════════════════════════════════════════════════════
+RESUMEN — ORDEN DE PASOS
+═══════════════════════════════════════════════════════════════
+
+  ✅ Ya tienes: index.html y ofertas.js listos
+  1. Crear cuenta Netlify y subir la carpeta
+  2. Cambiar nombre a chollopapis.netlify.app
+  3. Añadir el sitio en AdSense y pegar los códigos
+  4. Volver a subir la web con los códigos de AdSense
+  5. Configurar WEB_OFERTAS_PATH en el .env del bot
+  6. (Opcional pero recomendado) Conectar con GitHub
+
+═══════════════════════════════════════════════════════════════
